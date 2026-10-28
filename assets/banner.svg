@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#09090b" />
+      <stop offset="50%" stop-color="#0f0f15" />
+      <stop offset="100%" stop-color="#09090b" />
+    </linearGradient>
+
+    <linearGradient id="aurora1" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.35" />
+      <stop offset="50%" stop-color="#a855f7" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0.1" />
+    </linearGradient>
+
+    <linearGradient id="aurora2" x1="100%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.3" />
+      <stop offset="60%" stop-color="#3b82f6" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0.1" />
+    </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="40%" stop-color="#f8fafc" />
+      <stop offset="70%" stop-color="#cbd5e1" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#a855f7" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.6" />
+    </linearGradient>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="60" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <style>
+      @keyframes floatSlow {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-12px) rotate(1.5deg); }
+      }
+      @keyframes floatOpposite {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(10px) rotate(-1.5deg); }
+      }
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.6; transform: scale(1); }
+        50% { opacity: 0.9; transform: scale(1.04); }
+      }
+      @keyframes shimmerBadge {
+        0% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: 360; }
+      }
+      .floating-card-1 {
+        animation: floatSlow 7s ease-in-out infinite;
+      }
+      .floating-card-2 {
+        animation: floatOpposite 8s ease-in-out infinite;
+      }
+      .aurora-pulse {
+        animation: pulseGlow 10s ease-in-out infinite;
+      }
+      .status-pulse {
+        animation: pulseGlow 2s infinite ease-in-out;
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="380" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Animated Aurora Glows -->
+  <circle cx="280" cy="120" r="240" fill="url(#aurora1)" filter="url(#glow)" class="aurora-pulse" />
+  <circle cx="950" cy="220" r="260" fill="url(#aurora2)" filter="url(#glow)" class="aurora-pulse" />
+
+  <!-- Subtle Grid Pattern -->
+  <g opacity="0.04" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="60" x2="1200" y2="60" />
+    <line x1="0" y1="120" x2="1200" y2="120" />
+    <line x1="0" y1="180" x2="1200" y2="180" />
+    <line x1="0" y1="240" x2="1200" y2="240" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="150" y1="0" x2="150" y2="380" />
+    <line x1="300" y1="0" x2="300" y2="380" />
+    <line x1="450" y1="0" x2="450" y2="380" />
+    <line x1="600" y1="0" x2="600" y2="380" />
+    <line x1="750" y1="0" x2="750" y2="380" />
+    <line x1="900" y1="0" x2="900" y2="380" />
+    <line x1="1050" y1="0" x2="1050" y2="380" />
+  </g>
+
+  <!-- Container Border -->
+  <rect x="1" y="1" width="1198" height="378" rx="16" fill="none" stroke="url(#borderGrad)" stroke-width="1.5" />
+
+  <!-- Live Status Badge (Top-Left) -->
+  <g transform="translate(60, 48)">
+    <rect width="146" height="28" rx="14" fill="#032516" stroke="#059669" stroke-width="1" stroke-opacity="0.4" />
+    <circle cx="16" cy="14" r="4.5" fill="#10b981" class="status-pulse" />
+    <text x="28" y="18" fill="#34d399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="600" letter-spacing="0.5">LIVE PRODUCTION</text>
+  </g>
+
+  <!-- Main Hero Brand & Title -->
+  <g transform="translate(60, 118)">
+    <!-- App Logo Icon -->
+    <rect width="44" height="44" rx="10" fill="#18181b" stroke="#27272a" stroke-width="1.5" />
+    <path d="M 14 18 L 22 14 L 30 18 L 22 22 Z" fill="none" stroke="#a855f7" stroke-width="2" stroke-linejoin="round" />
+    <path d="M 14 23 L 22 27 L 30 23" fill="none" stroke="#818cf8" stroke-width="2" stroke-linejoin="round" />
+    <path d="M 14 28 L 22 32 L 30 28" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linejoin="round" />
+    
+    <!-- Title Text -->
+    <text x="58" y="32" fill="url(#textGrad)" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="38" font-weight="800" letter-spacing="-1">revise</text>
+  </g>
+
+  <!-- Tagline -->
+  <text x="60" y="195" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="22" font-weight="600" letter-spacing="-0.3">
+    AI-Powered Technical Revision &amp; Active-Recall Flashcards
+  </text>
+  <text x="60" y="226" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="14.5" font-weight="400">
+    Transform raw lectures, dense technical PDFs, or code manuals into exam-ready summaries &amp; Anki decks.
+  </text>
+
+  <!-- Feature Pills -->
+  <g transform="translate(60, 268)">
+    <!-- Pill 1: Groq LLM -->
+    <g transform="translate(0, 0)">
+      <rect width="180" height="34" rx="8" fill="#121217" stroke="#27272a" stroke-width="1" />
+      <text x="14" y="21" fill="#f43f5e" font-size="13">⚡</text>
+      <text x="34" y="21" fill="#e2e8f0" font-family="sans-serif" font-size="12" font-weight="500">Ultra-Fast Groq LLM</text>
+    </g>
+
+    <!-- Pill 2: PDF Parsing -->
+    <g transform="translate(192, 0)">
+      <rect width="170" height="34" rx="8" fill="#121217" stroke="#27272a" stroke-width="1" />
+      <text x="14" y="21" fill="#38bdf8" font-size="13">📑</text>
+      <text x="34" y="21" fill="#e2e8f0" font-family="sans-serif" font-size="12" font-weight="500">PDF &amp; Notes Parser</text>
+    </g>
+
+    <!-- Pill 3: Active Recall -->
+    <g transform="translate(374, 0)">
+      <rect width="190" height="34" rx="8" fill="#121217" stroke="#27272a" stroke-width="1" />
+      <text x="14" y="21" fill="#a855f7" font-size="13">🗂️</text>
+      <text x="34" y="21" fill="#e2e8f0" font-family="sans-serif" font-size="12" font-weight="500">Study Carousel Deck</text>
+    </g>
+
+    <!-- Pill 4: Anki CSV Export -->
+    <g transform="translate(576, 0)">
+      <rect width="175" height="34" rx="8" fill="#121217" stroke="#27272a" stroke-width="1" />
+      <text x="14" y="21" fill="#34d399" font-size="13">📥</text>
+      <text x="34" y="21" fill="#e2e8f0" font-family="sans-serif" font-size="12" font-weight="500">Anki-Ready CSV Export</text>
+    </g>
+  </g>
+
+  <!-- Right Visual: Floating Flashcard Mockups -->
+  <!-- Card 1 (Back / Top Card) -->
+  <g class="floating-card-1" transform="translate(850, 70)">
+    <rect width="280" height="150" rx="12" fill="#18181f" stroke="#3f3f46" stroke-width="1.2" opacity="0.9" />
+    <rect x="18" y="18" width="110" height="20" rx="10" fill="#312e81" opacity="0.7" />
+    <text x="28" y="32" fill="#818cf8" font-family="sans-serif" font-size="10.5" font-weight="600">CARD #1 — RECALL</text>
+    <text x="18" y="66" fill="#f8fafc" font-family="sans-serif" font-size="13" font-weight="600">What is Virtual Memory?</text>
+    <text x="18" y="90" fill="#94a3b8" font-family="sans-serif" font-size="11" line-height="1.4">
+      <tspan x="18" dy="0">Abstraction providing contiguous</tspan>
+      <tspan x="18" dy="16">virtual addresses via MMU paging.</tspan>
+    </text>
+    <text x="18" y="132" fill="#64748b" font-family="sans-serif" font-size="9.5">Space to flip ⇄</text>
+  </g>
+
+  <!-- Card 2 (Front Accent Card) -->
+  <g class="floating-card-2" transform="translate(890, 160)">
+    <rect width="270" height="150" rx="12" fill="#0f172a" stroke="#6366f1" stroke-width="1.5" />
+    <rect x="18" y="18" width="90" height="20" rx="10" fill="#064e3b" opacity="0.8" />
+    <text x="28" y="32" fill="#34d399" font-family="sans-serif" font-size="10" font-weight="600">✓ ANSWER</text>
+    <text x="18" y="66" fill="#ffffff" font-family="sans-serif" font-size="12.5" font-weight="500">
+      <tspan x="18" dy="0">Hardware MMU translates</tspan>
+      <tspan x="18" dy="16">pages to physical frames.</tspan>
+      <tspan x="18" dy="16">Faults fetch from secondary swap.</tspan>
+    </text>
+    <line x1="18" y1="120" x2="252" y2="120" stroke="#1e293b" stroke-width="1" />
+    <text x="18" y="136" fill="#38bdf8" font-family="sans-serif" font-size="9.5" font-weight="500">📥 Exportable to Anki Deck</text>
+  </g>
+</svg>
